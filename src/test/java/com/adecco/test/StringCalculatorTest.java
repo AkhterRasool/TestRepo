@@ -28,4 +28,12 @@ public class StringCalculatorTest {
         Assertions.assertEquals(expectedResult, actualResult);
     }
 
+    @Test
+    public void addTwoIntegers() {
+        String inputString = "1,2";
+        int expectedResult = 3;
+        int actualResult = stringCalculator.add(inputString);
+        Assertions.assertEquals(expectedResult, actualResult);
+    }
+
 }
