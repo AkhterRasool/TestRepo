@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
 public class StringCalculatorTest {
 
     private static StringCalculator stringCalculator;
@@ -33,6 +35,23 @@ public class StringCalculatorTest {
         String inputString = "1,2";
         int expectedResult = 3;
         int actualResult = stringCalculator.add(inputString);
+        Assertions.assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    public void addUnknownAmountOfNumbers() {
+        Random random = new Random();
+        int totalNumbers = random.nextInt(500);
+        StringBuilder inputString = new StringBuilder("");
+        int expectedResult = 0;
+        for (int i = 1; i <= totalNumbers; i++) {
+            int currentNum = random.nextInt(totalNumbers);
+            inputString.append(currentNum);
+            expectedResult += currentNum;
+            if (i < totalNumbers)
+                inputString.append(",");
+        }
+        int actualResult = stringCalculator.add(inputString.toString());
         Assertions.assertEquals(expectedResult, actualResult);
     }
 
