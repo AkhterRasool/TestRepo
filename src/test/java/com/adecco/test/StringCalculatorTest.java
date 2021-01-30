@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class StringCalculatorTest {
 
-    private StringCalculator stringCalculator;
+    private static StringCalculator stringCalculator;
 
     @BeforeAll
     public static void setup() {
