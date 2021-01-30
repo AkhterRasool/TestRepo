@@ -55,4 +55,12 @@ public class StringCalculatorTest {
         Assertions.assertEquals(expectedResult, actualResult);
     }
 
+    @Test
+    public void addNumbersHavingNewLines() {
+        String inputString = "1\n2,3";
+        int expectedResult = 6;
+        int actualResult = stringCalculator.add(inputString);
+        Assertions.assertEquals(expectedResult, actualResult);
+    }
+
 }
