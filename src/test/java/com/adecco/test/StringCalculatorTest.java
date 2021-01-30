@@ -20,4 +20,12 @@ public class StringCalculatorTest {
         Assertions.assertEquals(0, result);
     }
 
+    @Test
+    public void addOneInteger() {
+        String inputString = "1";
+        int expectedResult = 1;
+        int actualResult = stringCalculator.add(inputString);
+        Assertions.assertEquals(expectedResult, actualResult);
+    }
+
 }
