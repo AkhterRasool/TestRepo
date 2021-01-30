@@ -63,4 +63,12 @@ public class StringCalculatorTest {
         Assertions.assertEquals(expectedResult, actualResult);
     }
 
+    @Test
+    public void addNumbersWithFlexibleDelimiter() {
+        String inputString = "//;\n1;2;7";
+        int expectedResult = 10;
+        int actualResult = stringCalculator.add(inputString);
+        Assertions.assertEquals(expectedResult, actualResult);
+    }
+
 }
