@@ -2,14 +2,13 @@ package com.adecco.test;
 
 public class StringCalculator {
     public int add(String numbers) {
-        if (numbers.contains(",")) {
-            String[] elems = numbers.trim().split(",");
-            int result = 0;
-            for (String elem: elems) {
+        String[] elems = numbers.trim().split(",");
+        int result = 0;
+        for (String elem: elems) {
+            try {
                 result += Integer.parseInt(elem);
-            }
-            return result;
+            } catch (NumberFormatException ex) {}
         }
-        return numbers.isEmpty() ? 0 : Integer.parseInt(numbers);
+        return result;
     }
 }
