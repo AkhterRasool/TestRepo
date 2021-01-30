@@ -83,7 +83,8 @@ public class StringCalculatorTest {
     public void addNegativeNumbers() {
         String inputString = "-1,2";
         String expectedMessage = "negatives not allowed [-1]";
-        Assertions.assertThrows(Exception.class, () -> stringCalculator.add(inputString), expectedMessage);
+        Exception exception = Assertions.assertThrows(Exception.class, () -> stringCalculator.add(inputString), expectedMessage);
+        Assertions.assertEquals(expectedMessage, exception.getMessage());
     }
 
 }
