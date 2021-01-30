@@ -2,9 +2,9 @@ package com.adecco.test;
 
 public class StringCalculator {
     public int add(String numbers) {
-        String delimiter = ",";
+        char delimiter = ',';
         if (numbers.startsWith("//")) {
-            delimiter = String.valueOf(numbers.charAt(2));
+            delimiter = numbers.charAt(2);
         }
         String[] elems = numbers.trim().split("[" + delimiter + "\n]");
         int result = 0;
